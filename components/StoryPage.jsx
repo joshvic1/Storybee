@@ -19,7 +19,7 @@ export default function StoryPage({ selectedCategory }) {
 
   const baseUrl =
     process.env.NEXT_PUBLIC_BACKEND_URL ||
-    "https://joshspot-backend-2.onrender.com/";
+    "https://storybee-backend-production.up.railway.app";
 
   useEffect(() => {
     setHasMounted(true);
@@ -30,7 +30,7 @@ export default function StoryPage({ selectedCategory }) {
     const loadFeaturedStories = async () => {
       try {
         const res = await fetch(
-          `${baseUrl}/api/all-stories?featured=true&limit=10`
+          `${baseUrl}/api/all-stories?featured=true&limit=10`,
         );
         const data = await res.json();
         setFeaturedStories(data.stories || []);

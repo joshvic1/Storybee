@@ -36,14 +36,14 @@ export default function TopHeader({ stories }) {
       ? "/logo2.png"
       : "/logo1.png"
     : theme === "dark"
-    ? "/logo2.png"
-    : "/logo1.png";
+      ? "/logo2.png"
+      : "/logo1.png";
 
   return (
     <header className="top-header">
       <div className="header-left">
         <Link href="/">
-          <img src={logoSrc} alt="Logo" className="header-logo" />
+          <p>StoryBee</p>
         </Link>
       </div>
 

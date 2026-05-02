@@ -9,7 +9,7 @@ export default async function HomePage({ searchParams }) {
   const baseUrl =
     process.env.BACKEND_URL ||
     process.env.NEXT_PUBLIC_BACKEND_URL ||
-    "https://joshspot-backend-production.up.railway.app";
+    "https://storybee-backend-production.up.railway.app";
 
   const featuredUrl = `${baseUrl}/api/all-stories?featured=true&category=${selectedCategory}&limit=5`;
   const regularUrl = `${baseUrl}/api/all-stories?featured=false&category=${selectedCategory}&limit=10`;

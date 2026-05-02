@@ -36,9 +36,9 @@ export default function MobileSideBar({ setChatOpen, setChatExpanded }) {
     { label: "Home", icon: <FiHome />, href: "/" },
     { label: "My Stories", icon: <FiEdit2 />, href: "/submissions" },
     { label: "Submit Anonymous", icon: <FiPlusCircle />, href: "/submit" },
-    { label: "Exclusive Stories", icon: <FiZap />, href: "/exclusive" },
+
     { label: "Saved", icon: <FiBookmark />, href: "/favorites" },
-    { label: "Notifications", icon: <FiBell />, href: "/notifications" },
+
     { label: "About us", icon: <FiInfo />, href: "/about" },
     { label: "Contact us", icon: <FiMessageSquare />, href: "/contact" },
   ];
