@@ -1,0 +1,126 @@
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--accent-lightest);
+  backdrop-filter: blur(10px);
+  padding: 0 1.5rem;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid var(--accent-lighter);
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 35px;
+  width: auto;
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: var(--text-inverse);
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-icon {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none;
+}
+
+/* ---------- MOBILE STYLING ---------- */
+
+@media (max-width: 768px) {
+  .top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: auto;
+    gap: 0.5rem;
+  }
+
+  .header-left {
+    flex: 0 0 auto;
+  }
+
+  .header-logo {
+    height: 30px;
+  }
+
+  .header-center {
+    flex: 1;
+    margin: 0 0.5rem;
+  }
+
+  .header-center input {
+    width: 100%;
+  }
+  .dark-toggle {
+    display: none;
+  }
+
+  .header-right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-menu-icon {
+    background-color: var(--accent-lighter);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-menu-icon:hover {
+    background-color: var(--accent-medium);
+  }
+
+  .submit-button {
+    display: none;
+  }
+}

@@ -1,0 +1,121 @@
+/* Categories  */
+.category-tabs {
+  display: flex;
+  justify-content: start;
+  overflow-x: auto;
+  gap: 1px;
+  padding: 0.1rem 0.1rem 0.5rem 0.1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  padding: 4px 10px;
+  background-color: var(--accent-lightest);
+  color: var(--text-color);
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+}
+
+.tab:hover {
+  background-color: var(--accent-dark);
+  color: var(--text-color);
+}
+
+.active-tab {
+  background-color: var(--primary-color);
+  color: var(--text-inverse);
+  border: 1px solid var(--primary-dark);
+}
+
+.active-tab:hover {
+  background-color: var(--primary-dark);
+  color: var(--text-inverse);
+}
+
+/* Hide on Desktop */
+.mobile-dropdown-container {
+  display: none;
+}
+
+/* Mobile Dropdown Styles */
+@media (max-width: 827px) {
+  .category-tabs {
+    display: none !important;
+  }
+
+  .mobile-dropdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.1rem 0;
+  }
+
+  .dropdown-wrapper {
+    position: relative;
+    flex: 1;
+  }
+
+  .dropdown-trigger {
+    background-color: var(--bg-card);
+    padding: 0.45rem 1rem;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s ease;
+    max-width: 120px;
+    border: 1px solid var(--border-color);
+  }
+
+  .dropdown-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.95rem;
+    color: var(--text-color);
+  }
+
+  .dropdown-icon.open {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px var(--shadow-color);
+    z-index: 10;
+    padding: 0.23rem 0;
+    max-width: 150px;
+    border: 1px solid var(--border-color);
+  }
+
+  .dropdown-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 0.8rem;
+    transition: 0.2s ease;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--bg-hover);
+  }
+
+  .dropdown-item.active {
+    background-color: var(--primary-color);
+    color: var(--text-inverse);
+  }
+}

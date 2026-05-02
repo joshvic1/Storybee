@@ -1,0 +1,184 @@
+import { useMemo, useState, useEffect, useRef } from "react";
+import { formatDistanceToNow } from "date-fns";
+import Reactions from "/components/StoryCard/Reactions";
+import CommentIcon from "/components/StoryCard/CommentIcon";
+import ShareIcon from "/components/StoryCard/ShareIcon";
+import "/styles/storycard.css";
+import { usePathname } from "next/navigation";
+import { FiBookmark } from "react-icons/fi";
+import { FaBookmark } from "react-icons/fa";
+
+// Emoji avatars
+const emojiAvatars = [
+  "🦁",
+  "🐼",
+  "👻",
+  "🐸",
+  "🦊",
+  "😈",
+  "🐵",
+  "🤖",
+  "🐙",
+  "🐶",
+  "👽",
+];
+
+// Category border colors
+const categoryColors = {
+  love: "#ff5e78",
+  sex: "#ff9f43",
+  relationship: "#6a89cc",
+  heartbreak: "#e55039",
+};
+
+export default function StoryCard({ story, onRemoveFavorite, isFavoritePage }) {
+  // Defensive check
+  if (
+    !story ||
+    !story.content ||
+    !story._id ||
+    !story.createdAt ||
+    !story.category
+  ) {
+    return null;
+  }
+
+  const { content, category, createdAt } = story;
+  const timeAgo = formatDistanceToNow(new Date(createdAt), { addSuffix: true });
+  const borderColor = categoryColors[category] || "#999";
+  const [shareOpen, setShareOpen] = useState(false);
+  const [openShareId, setOpenShareId] = useState(null);
+  const shareRefs = useRef({});
+  const [expanded, setExpanded] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setIsFavorite(favorites.some((fav) => fav._id === story._id));
+  }, [story._id]);
+
+  const toggleFavorite = () => {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (isFavorite) {
+      const updated = favorites.filter((s) => s._id !== story._id);
+      localStorage.setItem("favorites", JSON.stringify(updated));
+      setIsFavorite(false);
+
+      if (isFavoritePage && onRemoveFavorite) {
+        onRemoveFavorite(story._id);
+      }
+    } else {
+      favorites.push(story);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      setIsFavorite(true);
+    }
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      const currentRef = shareRefs.current[openShareId];
+      if (openShareId && currentRef && !currentRef.contains(event.target)) {
+        setOpenShareId(null);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openShareId]);
+
+  const isLong = content.length > 200;
+  const displayedText =
+    expanded || !isLong ? content : content.slice(0, 200) + "...";
+
+  const emojiAvatar = useMemo(() => {
+    const index = Math.floor(Math.random() * emojiAvatars.length);
+    return emojiAvatars[index];
+  }, [story._id]);
+
+  return (
+    <div className="story-card">
+      <div
+        className={`story-card-v2 ${
+          openShareId === story._id ? "card-has-share-open" : ""
+        }`}
+        ref={(el) => (shareRefs.current[story._id] = el)}
+      >
+        {/* 🔖 Favorite icon */}
+        <div className="favorite-icon" onClick={toggleFavorite}>
+          {isFavorite ? (
+            <div className="tooltip">
+              <FaBookmark size={20} color="var(--text-color)" />
+              <span className="tooltip-text">Remove from Favorite</span>
+            </div>
+          ) : (
+            <div className="tooltip">
+              <FiBookmark size={20} color="#aaa" />
+              <span className="tooltip-text">Add to Favorite</span>
+            </div>
+          )}
+        </div>
+
+        <div className="story-header">
+          <div className="emoji-avatar">{emojiAvatar}</div>
+          <div className="meta-info">
+            <span className="category" style={{ color: borderColor }}>
+              {category}
+            </span>
+            <span className="time">{timeAgo}</span>
+          </div>
+        </div>
+
+        <p className="story-content">
+          {displayedText}{" "}
+          {isLong && (
+            <button
+              className="expand-btn"
+              onClick={() => {
+                const newState = !expanded;
+                setExpanded(newState);
+
+                // Fire TikTok event only when expanding (Show More)
+                if (newState && typeof window !== "undefined" && window.ttq) {
+                  window.ttq.track("ViewContent", {
+                    content_type: "product",
+                    content_id: story._id,
+                    contents: [
+                      {
+                        content_type: "product",
+                        content_id: story._id,
+                      },
+                    ],
+                  });
+                }
+              }}
+            >
+              {expanded ? "Show Less ▲" : "Show More ▼"}
+            </button>
+          )}
+        </p>
+
+        <div className="story-meta">
+          <div className="meta-item">
+            <Reactions storyId={story._id} />
+            <div className="meta-item">
+              <CommentIcon storyId={story._id} />
+            </div>
+          </div>
+          <div className="meta-item">
+            <ShareIcon
+              storyId={story._id}
+              isOpen={openShareId === story._id}
+              onToggle={() =>
+                setOpenShareId(openShareId === story._id ? null : story._id)
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

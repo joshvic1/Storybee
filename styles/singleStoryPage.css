@@ -1,0 +1,124 @@
+body {
+  background-color: var(--background-color);
+}
+.back {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  background-color: var(--background-color);
+}
+
+.back-home {
+  background: var(--black-color);
+}
+
+.individual-story {
+  background: var(--white-color);
+  color: var(--text-color);
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  margin: 2rem;
+  box-shadow: 0 8px 20px rgba(67, 24, 69, 0.1);
+  transition: var(--transition-speed);
+}
+
+.story-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.story-category {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--black-gradient);
+  color: var(--white-color);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.story-time {
+  color: var(--time);
+}
+
+.story-full-content {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+  color: var(--text-color);
+}
+
+.story-meta-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media (max-width: 768px) {
+  .back {
+    padding-left: 1rem;
+    padding-top: 0.8rem;
+  }
+
+  .individual-story {
+    margin: 0.3rem;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .story-meta {
+    font-size: 0.85rem;
+    gap: 0.75rem;
+  }
+
+  .story-full-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .story-meta-icons {
+    gap: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .back {
+    padding-left: 0.8rem;
+    padding-top: 0.5rem;
+  }
+
+  .individual-story {
+    margin: 0.7rem;
+    padding: 1.2rem 0.8rem;
+    border-radius: 10px;
+  }
+
+  .story-meta {
+    font-size: 0.8rem;
+  }
+
+  .story-category {
+    padding: 4px 10px;
+  }
+
+  .story-full-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .story-meta-icons {
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
