@@ -42,7 +42,7 @@ export default function StoryImageTemplate({
           JS
         </div>
         <div style={{ fontSize: 28, opacity: 0.9, fontWeight: 600 }}>
-          Joshspot Stories
+          StoryBee
         </div>
       </div>
 
@@ -82,9 +82,7 @@ export default function StoryImageTemplate({
         }}
       >
         <div style={{ fontSize: 22, opacity: 0.9 }}>{footerTag}</div>
-        <div style={{ fontSize: 18, opacity: 0.7 }}>
-          joshspot.tv • #Relatable
-        </div>
+        <div style={{ fontSize: 18, opacity: 0.7 }}>Storybee • #Relatable</div>
       </div>
     </div>
   );

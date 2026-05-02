@@ -22,8 +22,8 @@ export default function ContactPage() {
             </h1>
             <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
               Have questions, feedback, or want to advertise with{" "}
-              <strong>Joshspot TV Stories</strong>? We’d love to hear from you.
-              Let’s talk and create something impactful together.
+              <strong>Storybee</strong>? We’d love to hear from you. Let’s talk
+              and create something impactful together.
             </p>
           </div>
 
@@ -153,8 +153,7 @@ export default function ContactPage() {
           </div>
 
           <p className="text-center text-sm text-[var(--text-muted)] mt-12">
-            © {new Date().getFullYear()} Joshspot TV Stories — We’re just a
-            message away.
+            © {new Date().getFullYear()} Storybee — We’re just a message away.
           </p>
         </section>
       </main>

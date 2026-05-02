@@ -86,7 +86,7 @@ export default function PinGate({ onUnlock }) {
         <div className="flex items-center gap-2">
           <LockIcon className="text-violet-300" />
           <h1 className="text-lg font-semibold tracking-tight">
-            Joshspot Review
+            Storybee Review
           </h1>
         </div>
         <span className="text-[10px] uppercase tracking-widest text-white/60">
@@ -145,7 +145,7 @@ export default function PinGate({ onUnlock }) {
 
       {/* Watermark */}
       <div className="mt-5 text-[10px] tracking-wider text-white/50">
-        joshspot.tv • @joshspot_tv
+        storybee • @storybee
       </div>
 
       {/* Local styles for shake animation */}

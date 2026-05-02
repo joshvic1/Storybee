@@ -15,7 +15,7 @@ export default function SidebarSticky() {
             <TrendingStories />
           </div>
         </div>
-        <footer className="sidebar-footer">© Joshspot Stories 2025</footer>
+        <footer className="sidebar-footer">© Storybee 2025</footer>
       </aside>
     </div>
   );

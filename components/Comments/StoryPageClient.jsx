@@ -95,9 +95,9 @@ export default function StoryPageClient({ story }) {
                   ))}
 
                   {/* Insert Ad between [ad] */}
-                  {index < storyParts.length - 1 && (
+                  {/* {index < storyParts.length - 1 && (
                     <AdsenseInline slot="6027685473" />
-                  )}
+                  )} */}
                 </div>
               );
             })}
@@ -124,7 +124,7 @@ export default function StoryPageClient({ story }) {
           <hr />
 
           {/* ✅ Strong ad before comments */}
-          <AdsenseInline slot="6027685473" />
+          {/* <AdsenseInline slot="6027685473" /> */}
 
           <h3>Comments</h3>
           <CommentForm storyId={_id} onCommentAdded={handleCommentAdded} />

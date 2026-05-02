@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import "/app/globals.css";
 import Sidebar from "./SideBar";
-import FloatingChatButton from "./FloatingChatButton";
+// import FloatingChatButton from "./FloatingChatButton";
 import TopHeader from "../TopHeader";
 import SearchBar from "./SearchBar";
 
@@ -19,7 +19,7 @@ export default function MainLayout({ children }) {
   useEffect(() => {
     const fetchStories = async () => {
       const res = await fetch(
-        `${BACKEND_URL}/api/all-stories?page=1&limit=100`
+        `${BACKEND_URL}/api/all-stories?page=1&limit=100`,
       );
       const data = await res.json();
       setStories(data.stories || []);
@@ -56,12 +56,12 @@ export default function MainLayout({ children }) {
         />
       )}
 
-      <FloatingChatButton
+      {/* <FloatingChatButton
         isChatOpen={isChatOpen}
         setIsChatOpen={setIsChatOpen}
         isChatExpanded={isChatExpanded}
         setIsChatExpanded={setIsChatExpanded}
-      />
+      /> */}
 
       <main
         className="main-content"

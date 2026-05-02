@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Joshspot Stories",
+  title: "Storybee",
   description: "Your Story. Your Confession. Your Experience. Anonymous",
 };
 
@@ -23,16 +23,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <Script
+        {/* <Script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
           strategy="beforeInteractive"
-        />
+        /> */}
 
-        <script
+        {/* <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1759270581850188"
           crossorigin="anonymous"
-        ></script>
+        ></script> */}
 
         <meta name="theme-color" content="#431845" />
         <meta name="msapplication-navbutton-color" content="#431845" />
@@ -46,9 +46,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <OneSignalInit />
+        {/* <OneSignalInit /> */}
         {/* TikTok Pixel */}
-        <Script id="tiktok-pixel" strategy="afterInteractive">
+        {/* <Script id="tiktok-pixel" strategy="afterInteractive">
           {`
             !function (w, d, t) {
               w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
               ttq.page();
             }(window, document, 'ttq');
           `}
-        </Script>
+        </Script> */}
         {children}
       </body>
     </html>

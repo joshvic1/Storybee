@@ -8,20 +8,20 @@ export default function AboutPage() {
       <main className="about-page text-gray-200 bg-[var(--background-color)] min-h-screen py-16 px-6 md:px-20">
         <section className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-4xl font-bold text-[var(--primary-color)] mb-4">
-            About Joshspot TV Stories
+            About Storybee
           </h1>
 
           <p className="text-lg leading-relaxed text-[var(--text-color)]">
-            Joshspot TV Stories began as a simple WhatsApp TV — a small
-            community where people came not just to read stories, but to *feel
-            something*. What started as short, relatable tales shared among
-            friends has grown into one of Nigeria’s most engaging digital
-            storytelling platforms, reaching thousands of readers across
-            WhatsApp, Twitter, Instagram, Telegram, and TikTok every single day.
+            Storybee began as a simple WhatsApp TV — a small community where
+            people came not just to read stories, but to *feel something*. What
+            started as short, relatable tales shared among friends has grown
+            into one of Nigeria’s most engaging digital storytelling platforms,
+            reaching thousands of readers across WhatsApp, Twitter, Instagram,
+            Telegram, and TikTok every single day.
           </p>
 
           <p className="text-lg leading-relaxed text-[var(--text-muted)]">
-            Behind Joshspot TV is a passion for real, raw storytelling — stories
+            Behind Storybee is a passion for real, raw storytelling — stories
             that reflect everyday emotions, modern relationships, love,
             heartbreak, choices, mistakes, and the beauty hidden in
             imperfection. Each post, each story, and each caption is crafted to
@@ -44,10 +44,10 @@ export default function AboutPage() {
           </p>
 
           <p className="text-lg leading-relaxed text-[var(--text-muted)]">
-            Over the years, Joshspot TV Stories has evolved beyond just
-            “stories.” We’ve built a *community*. A space where young people can
-            share their experiences, learn from others, and find comfort knowing
-            that they’re not alone in their feelings or struggles. Our goal has
+            Over the years, Storybee has evolved beyond just “stories.” We’ve
+            built a *community*. A space where young people can share their
+            experiences, learn from others, and find comfort knowing that
+            they’re not alone in their feelings or struggles. Our goal has
             always been to bridge that emotional gap — between content and
             connection.
           </p>
@@ -72,9 +72,9 @@ export default function AboutPage() {
               our reputation.
             </li>
             <li>
-              <strong>Connection:</strong> Joshspot TV isn’t about viral
-              content. It’s about *impact*. We want our stories to stay with you
-              long after you’ve read them.
+              <strong>Connection:</strong> Storybee isn’t about viral content.
+              It’s about *impact*. We want our stories to stay with you long
+              after you’ve read them.
             </li>
           </ul>
 
@@ -85,9 +85,9 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed text-[var(--text-color)]">
             We envision a world where storytelling doesn’t just entertain — it
             inspires, teaches, and connects people from different walks of life.
-            Joshspot TV Stories aims to become Africa’s biggest hub for digital
-            stories and emotional entertainment, where writers, brands, and
-            readers coexist in one creative ecosystem.
+            Storybee aims to become Africa’s biggest hub for digital stories and
+            emotional entertainment, where writers, brands, and readers coexist
+            in one creative ecosystem.
           </p>
 
           <h2 className="text-2xl font-semibold text-[var(--primary-color)] mt-8">
@@ -97,7 +97,7 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed text-[var(--text-muted)]">
             To our loyal readers — you’re the reason we exist. Your messages,
             reactions, and constant support keep us going. Every like, share,
-            and comment fuels the heart of Joshspot TV.
+            and comment fuels the heart of Storybee.
             <br />
             And to our advertisers — thank you for trusting our platform to tell
             your stories. You’re not just promoting your brands here; you’re
@@ -110,7 +110,7 @@ export default function AboutPage() {
               Join The Movement
             </h3>
             <p className="text-[var(--text-color)] leading-relaxed">
-              Joshspot TV is more than a platform — it’s a movement of emotions,
+              Storybee is more than a platform — it’s a movement of emotions,
               creativity, and truth. Whether you’re a reader, storyteller,
               influencer, or brand, there’s space for you in this story.
             </p>
@@ -121,8 +121,8 @@ export default function AboutPage() {
           </div>
 
           <p className="text-center text-sm text-[var(--text-muted)] mt-12">
-            © {new Date().getFullYear()} Joshspot TV Stories — Created with
-            love, passion, and storytelling.
+            © {new Date().getFullYear()} Storybee — Created with love, passion,
+            and storytelling.
           </p>
         </section>
       </main>

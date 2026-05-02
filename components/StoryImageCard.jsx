@@ -113,7 +113,7 @@ export default function StoryImageCard({ title, text, category, index }) {
               filter: "blur(1px)",
             }}
           >
-            @joshspot_tv
+            @storybee
           </div>
         </div>
 
@@ -131,7 +131,7 @@ export default function StoryImageCard({ title, text, category, index }) {
             zIndex: 2,
           }}
         >
-          JOSHSPOT TV — ANONYMOUS STORIES
+          STORYBEE — ANONYMOUS STORIES
         </div>
 
         {/* CATEGORY PILL */}
@@ -217,7 +217,7 @@ export default function StoryImageCard({ title, text, category, index }) {
         >
           <div style={{ fontSize: 22, fontWeight: 700 }}>Page {index + 1}</div>
           <div style={{ fontSize: 22, fontWeight: 700 }}>
-            joshspot.tv • @joshspot_tv
+            STORYBEE • @storybee
           </div>
         </div>
       </div>

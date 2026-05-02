@@ -12,14 +12,14 @@ export default function AdsenseInline({ slot }) {
 
   return (
     <div style={{ margin: "20px 0" }}>
-      <ins
+      {/* <ins
         className="adsbygoogle"
         style={{ display: "block", textAlign: "center" }}
         data-ad-client="ca-pub-1759270581850188"
         data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"
-      />
+      /> */}
     </div>
   );
 }

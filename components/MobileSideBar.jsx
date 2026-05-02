@@ -77,7 +77,7 @@ export default function MobileSideBar({ setChatOpen, setChatExpanded }) {
               <span className="icon">
                 <FiMessageCircle />
               </span>
-              <span className="label">Joshspot AI</span>
+              <span className="label">Storybee AI</span>
             </button>
             <div className="dark-toggle-wrapper">
               <DarklightMode />

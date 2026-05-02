@@ -107,7 +107,7 @@ export default function StoryList({
             <FaFire style={{ marginRight: "5px" }} /> Recent Stories
           </h2>
           <div style={{ margin: "20px 0", textAlign: "center" }}>
-            <AdsenseAd type="ad2" />
+            {/* <AdsenseAd type="ad2" /> */}
           </div>
 
           <div className="story-layout">
@@ -126,13 +126,13 @@ export default function StoryList({
                       <StoryCard story={story} />
 
                       {/* Show ad after every 4 stories */}
-                      {(index + 1) % 4 === 0 && (
+                      {/* {(index + 1) % 4 === 0 && (
                         <AdsenseAd
                           type={
                             ["ad1", "ad2", "ad3"][Math.floor(Math.random() * 3)]
                           }
                         />
-                      )}
+                      )} */}
                     </div>
                   ))
                 )}
