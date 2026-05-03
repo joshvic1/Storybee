@@ -43,7 +43,7 @@ export default function TopHeader({ stories }) {
     <header className="top-header">
       <div className="header-left">
         <Link href="/">
-          <p>StoryBee</p>
+          <p className="logss">StoryBee</p>
         </Link>
       </div>
 
