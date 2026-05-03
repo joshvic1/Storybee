@@ -33,13 +33,7 @@ const categoryColors = {
 
 export default function StoryCard({ story, onRemoveFavorite, isFavoritePage }) {
   // Defensive check
-  if (
-    !story ||
-    !story.content ||
-    !story._id ||
-    !story.createdAt ||
-    !story.category
-  ) {
+  if (!story || !story.content || !story._id) {
     return null;
   }
 
